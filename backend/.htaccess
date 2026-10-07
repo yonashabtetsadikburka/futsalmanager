@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Blocca accesso a .env
+    RewriteRule ^\.env$ - [F,L]
+
+    # Blocca accesso a config/
+    RewriteRule ^config/ - [F,L]
+
+    # Blocca accesso a file .md
+    RewriteRule ^.*\.md$ - [F,L]
+
+    # Blocca accesso a .git*
+    RewriteRule ^\.git - [F,L]
+
+    # Blocca directory listing
+    Options -Indexes
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Security headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+
+    # No cache per API
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>

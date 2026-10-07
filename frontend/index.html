@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Futsal Manager</title>
+    <meta name="description" content="Gestione tornei di futsal - Tornei, Squadre, Giocatori, Partite, Classifiche">
+    <meta name="theme-color" content="#FF6B2B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Futsal Manager">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta property="og:title" content="Futsal Manager">
+    <meta property="og:description" content="Gestione tornei di futsal - Tornei, Squadre, Giocatori, Partite, Classifiche">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/Fut.webp">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css?v=9">
+    <link rel="stylesheet" href="css/base.css?v=9">
+    <link rel="stylesheet" href="css/components.css?v=11">
+    <link rel="stylesheet" href="css/screens.css?v=9">
+</head>
+<body>
+    <div id="app">
+        <div class="app-layout">
+            <!-- Header Nav (desktop) -->
+            <header class="header-nav" id="header-nav"></header>
+
+            <!-- Main Content -->
+            <div class="main-content" id="main-content"></div>
+        </div>
+
+        <!-- Bottom Tabs (mobile) -->
+        <nav class="bottom-tabs" id="bottom-tabs" style="display:none"></nav>
+
+        <!-- Footer (mobile) -->
+        <div class="mobile-footer" id="mobile-footer">&copy; FUTSAL MANAGER 2026</div>
+
+        <!-- Toast Container -->
+        <div class="toast-container" id="toast-container"></div>
+    </div>
+
+    <!-- Modal Container -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+
+    <script src="js/api.js?v=9"></script>
+    <script src="js/icons.js?v=10"></script>
+    <script src="js/components.js?v=9"></script>
+    <script src="js/router.js?v=9"></script>
+    <script src="js/screens/home.js?v=9"></script>
+    <script src="js/screens/tournaments.js?v=9"></script>
+    <script src="js/screens/tournamentDetail.js?v=9"></script>
+    <script src="js/screens/teams.js?v=9"></script>
+    <script src="js/screens/teamDetail.js?v=9"></script>
+    <script src="js/screens/players.js?v=9"></script>
+    <script src="js/screens/playerDetail.js?v=10"></script>
+    <script src="js/screens/standings.js?v=9"></script>
+    <script src="js/screens/stats.js?v=9"></script>
+    <script src="js/screens/news.js?v=9"></script>
+    <script src="js/screens/about.js?v=9"></script>
+    <script src="js/screens/contact.js?v=9"></script>
+    <script src="js/screens/login.js?v=10"></script>
+    <script src="js/screens/admin/dashboard.js?v=9"></script>
+    <script src="js/screens/admin/tournaments.js?v=10"></script>
+    <script src="js/screens/admin/teams.js?v=10"></script>
+    <script src="js/screens/admin/groups.js?v=9"></script>
+    <script src="js/screens/admin/standings.js?v=9"></script>
+    <script src="js/screens/admin/matches.js?v=9"></script>
+    <script src="js/screens/admin/players.js?v=9"></script>
+    <script src="js/screens/admin/coaches.js?v=9"></script>
+    <script src="js/screens/organizer-register.js?v=10"></script>
+    <script src="js/screens/admin/manual.js?v=9"></script>
+    <script src="js/screens/admin/forms.js?v=9"></script>
+    <script src="js/app.js?v=9"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .catch(function() {});
+        }
+    </script>
+</body>
+</html>

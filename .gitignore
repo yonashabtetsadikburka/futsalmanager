@@ -1,0 +1,24 @@
+# ===== Segreti: mai committare =====
+**/.env
+MEMORY.md
+*.bak
+
+# ===== Uploads utente (restano solo sul VPS) =====
+frontend/assets/uploads/team/*
+frontend/assets/uploads/tournament/*
+frontend/assets/uploads/players/*
+frontend/assets/uploads/team-photos/*
+frontend/assets/uploads/general/general_*
+!frontend/assets/uploads/.gitkeep
+
+# ===== Sistema / IDE =====
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# ===== Python / esperimenti (se presenti in futuro) =====
+venv/
+__pycache__/
+*.pyc

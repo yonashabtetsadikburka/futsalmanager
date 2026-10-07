@@ -1,5 +1,7 @@
 # FutsalManager
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-amber.svg)](LICENSE)
+
 Web app per la gestione di tornei di futsal: gironi, knockout automatico,
 classifiche live, statistiche giocatori, pannello admin/organizzatore e PWA offline.
 
@@ -40,3 +42,7 @@ backend/    # API PHP (config/, tournaments/, teams/, players/, groups/, matches
 
 - `frontend/assets/uploads/` contiene solo placeholder: le foto caricate dagli utenti restano sul server e non sono versionate.
 - Il file `.env` reale esiste solo sul VPS, mai su GitHub.
+
+## Licenza
+
+Distribuito sotto licenza MIT — vedi [LICENSE](LICENSE).

@@ -60,7 +60,7 @@ if (!in_array($mimeType, $allowedMimes)) {
     exit;
 }
 
-$uploadDir = dirname(__DIR__) . '/FutsalManager/assets/uploads/';
+$uploadDir = dirname(__DIR__) . '/frontend/assets/uploads/';
 if (!is_dir($uploadDir)) {
     @mkdir($uploadDir, 0755, true);
 }
@@ -89,7 +89,7 @@ if (!@move_uploaded_file($file['tmp_name'], $filepath)) {
         echo json_encode(["success" => false, "message" => "Errore durante il salvataggio del file. Permesso negato."]);
         exit;
     }
-    $url = '/FutsalManager/assets/uploads/' . $filename;
+    $url = '/assets/uploads/' . $filename;
     echo json_encode([
         "success" => true,
         "message" => "File caricato con successo",
@@ -128,7 +128,7 @@ if (in_array($extension, ['jpg', 'jpeg', 'png'])) {
     }
 }
 
-$url = '/FutsalManager/assets/uploads/' . $subDir . $filename;
+$url = '/assets/uploads/' . $subDir . $filename;
 
 echo json_encode([
     "success" => true,

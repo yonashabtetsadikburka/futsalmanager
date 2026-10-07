@@ -1,4 +1,4 @@
-const CACHE_NAME = "futsal-manager-v19";
+const CACHE_NAME = "futsal-manager-v20";
 const STATIC_ASSETS = [
     '/',
     '/index.html',

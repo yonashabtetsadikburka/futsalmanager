@@ -4,6 +4,12 @@ require_once __DIR__ . "/../config/cors.php";
 require_once __DIR__ . "/../config/database.php";
 // CORS handled by cors.php
 
+if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'error' => 'Errore del server']);
+    exit;
+}
+
 
 $groupId = $_GET['group_id'] ?? null;
 

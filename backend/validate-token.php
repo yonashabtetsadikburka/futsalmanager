@@ -6,6 +6,12 @@ require_once __DIR__ . "/config/cors.php";
 
 require_once __DIR__ . "/config/TokenManager.php";
 
+if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'error' => 'Errore del server']);
+    exit;
+}
+
 $headers = getallheaders();
 $authHeader = $headers['Authorization'] ?? $headers['authorization'] ?? '';
 

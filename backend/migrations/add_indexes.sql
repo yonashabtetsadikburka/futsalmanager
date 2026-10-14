@@ -1,5 +1,5 @@
 -- Indici per performance con 120+ squadre
--- Esegui: mysql -u futsal_user -p'DB_PASS' futsal < migrations/add_indexes.sql
+-- Esegui: mysql -u futsal_user -p'....' futsal < migrations/add_indexes.sql
 
 -- matches: query frequenti su tournament_id + status
 CREATE INDEX idx_matches_tournament_status ON matches(tournament_id, status);

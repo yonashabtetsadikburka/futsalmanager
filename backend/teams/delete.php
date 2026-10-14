@@ -8,6 +8,12 @@ require_once __DIR__ . "/../config/auth_middleware.php";
 
 getAuthMiddleware();
 
+if ($_SERVER['REQUEST_METHOD'] !== 'DELETE') {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'error' => 'Errore del server']);
+    exit;
+}
+
 $data = json_decode(file_get_contents("php://input"));
 
 if (empty($data->id)) {

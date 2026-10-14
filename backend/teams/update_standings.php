@@ -8,6 +8,12 @@ require_once __DIR__ . "/../config/auth_middleware.php";
 
 getAuthMiddleware();
 
+if ($_SERVER['REQUEST_METHOD'] !== 'PUT') {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'error' => 'Errore del server']);
+    exit;
+}
+
 if (!$conn) {
     http_response_code(500);
     echo json_encode(["success" => false, "message" => "Connessione database non disponibile"]);
